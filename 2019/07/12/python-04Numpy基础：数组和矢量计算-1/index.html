@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>tags | PalmLand</title>
+  <title>python-04Numpy基础：数组和矢量计算 | PalmLand</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is our history">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="ndarray：一种多维数组对象 通用函数：快速的元素级数组函数 利用数组进行数据处理 用于数组的文件输入输出 线性代数 伪随机数生成 示例：随机漫步">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python-04Numpy基础：数组和矢量计算">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/python-04Numpy基础：数组和矢量计算-1/index.html">
 <meta property="og:site_name" content="PalmLand">
-<meta property="og:description" content="This is our history">
+<meta property="og:description" content="ndarray：一种多维数组对象 通用函数：快速的元素级数组函数 利用数组进行数据处理 用于数组的文件输入输出 线性代数 伪随机数生成 示例：随机漫步">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-29T01:26:27.948Z">
+<meta property="og:image" content="http://yoursite.com/images/python/4.1.png">
+<meta property="og:image" content="http://yoursite.com/images/python/4.2.png">
+<meta property="og:updated_time" content="2019-07-12T14:57:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="This is our history">
+<meta name="twitter:title" content="python-04Numpy基础：数组和矢量计算">
+<meta name="twitter:description" content="ndarray：一种多维数组对象 通用函数：快速的元素级数组函数 利用数组进行数据处理 用于数组的文件输入输出 线性代数 伪随机数生成 示例：随机漫步">
+<meta name="twitter:image" content="http://yoursite.com/images/python/4.1.png">
   
     <link rel="alternative" href="/atom.xml" title="PalmLand" type="application/atom+xml">
   
@@ -168,27 +172,121 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-python-04Numpy基础：数组和矢量计算-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      python-04Numpy基础：数组和矢量计算
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2019-06-29T01:26:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-29</time>
+        <a href="/2019/07/12/python-04Numpy基础：数组和矢量计算-1/" class="archive-article-date">
+  	<time datetime="2019-07-12T01:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li>ndarray：一种多维数组对象<ul>
+<li>通用函数：快速的元素级数组函数</li>
+<li>利用数组进行数据处理</li>
+<li>用于数组的文件输入输出</li>
+<li>线性代数</li>
+<li>伪随机数生成</li>
+<li>示例：随机漫步</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<p>NumPy（Numerical Python的简称）是Python数值计算最重要的基础包。</p>
+<p>NumPy的部分功能如下：</p>
+<ul>
+<li>ndarray，一个具有矢量算术运算和复杂广播能力的快速且节省空间的多维数组。</li>
+<li>用于对整组数据进行快速运算的标准数学函数（无需编写循环）。</li>
+<li>用于读写磁盘数据的工具以及用于操作内存映射文件的工具。</li>
+<li>线性代数、随机数生成以及傅里叶变换功能。</li>
+<li>用于集成由C、C++、Fortran等语言编写的代码的A C API。</li>
+</ul>
+<p>NumPy之于数值计算特别重要的原因之一，是因为它可以高效处理大数组的数据。<br>这是因为：</p>
+<ul>
+<li>NumPy是在一个连续的内存块中存储数据，独立于其他Python内置对象。NumPy的C语言编写的算法库可以操作内存，而不必进行类型检查或其它前期工作。比起Python的内置序列，NumPy数组使用的内存更少。</li>
+<li>NumPy可以在整个数组上执行复杂的计算，而不需要Python的for循环。</li>
+</ul>
+<p>numpy可以高效处理大数组的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">my_arr = np.arange(100000)</span><br><span class="line">my_list = list(range(100000))</span><br><span class="line"></span><br><span class="line">%time for _ in range(10): my_arr2 = my_arr *2</span><br><span class="line"># Wall time: 1 ms</span><br><span class="line"></span><br><span class="line">%time for _ in range(10): my_list2 = my_list *2</span><br><span class="line"># Wall time: 32.9 ms</span><br></pre></td></tr></table></figure>
+
+<h1 id="一、NumPy的ndarray：一种多维数组对象"><a href="#一、NumPy的ndarray：一种多维数组对象" class="headerlink" title="一、NumPy的ndarray：一种多维数组对象"></a>一、NumPy的ndarray：一种多维数组对象</h1><p>NumPy最重要的一个特点就是其N维数组对象（即ndarray），是一个快速而灵活的大数据集容器。可以利用这种数组对整块数据执行一些数学运算，其语法跟标量元素之间的运算一样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data = np.random.randn(2,3)</span><br><span class="line">data</span><br><span class="line"># array([[ 0.5830263 , -0.39590117,  0.72400691],</span><br><span class="line">       [ 0.83895026, -0.1634468 , -1.55589942]])</span><br><span class="line">       </span><br><span class="line"># 进行数学运算：</span><br><span class="line">data*10</span><br><span class="line"># array([[  5.83026299,  -3.95901173,   7.24006906],</span><br><span class="line">       [  8.38950264,  -1.63446803, -15.5589942 ]])</span><br><span class="line"> </span><br><span class="line">data+data</span><br><span class="line"># array([[ 2.47469633,  0.01421658,  0.21865621],</span><br><span class="line">       [ 3.72025764, -0.31933374, -0.8535659 ]])</span><br></pre></td></tr></table></figure>
+
+<p>每个数组都有一个shape（一个表示各维度大小的元组）和一个dtype（一个<br>用于说明数组数据类型的对象）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data.shape # (2,3)</span><br><span class="line"></span><br><span class="line">data.dtype # dtype(&apos;float64&apos;)</span><br><span class="line"></span><br><span class="line">data.ndim # 维度是2</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建ndarray"><a href="#创建ndarray" class="headerlink" title="创建ndarray"></a>创建ndarray</h3><p>创建数组最简单的办法就是使用<strong>array函数</strong>。它接受一切序列型的对象（包括其他数组），然后产生一个新的含有传入数据的NumPy数组。以一个列表的转换为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">data1 = [3,5.9,2,6]</span><br><span class="line">arr1 = np.array(data1)</span><br><span class="line">arr1 # array([3. , 5.9, 2. , 6. ])</span><br><span class="line"></span><br><span class="line">data2 = [[3,9,2,6],[29,4,3,16]]</span><br><span class="line">arr2 = np.array(data2)</span><br><span class="line">arr2 # array([[ 3,  9,  2,  6],</span><br><span class="line">       [29,  4,  3, 16]])</span><br></pre></td></tr></table></figure>
+
+<p>因为data2是列表的列表，NumPy数组arr2的两个维度的shape是从data2引入的。可以用属性ndim和shape验证：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr2.ndim # 2</span><br><span class="line"></span><br><span class="line">arr2.shape # (2, 4)</span><br></pre></td></tr></table></figure>
+
+<p>np.array会尝试为新建的这个数组推断出一个较为合适的数据类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr2.dtype # dtype(&apos;int32&apos;)</span><br></pre></td></tr></table></figure>
+
+<p>除np.array之外，还有一些函数也可以新建数组。</p>
+<ul>
+<li><p>zeros和ones分别可以创建指定长度或形状的全0或全1数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.zeros(10) </span><br><span class="line"># array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>empty可以创建一个没有任何具体值的数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.empty((2,4))</span><br><span class="line"># array([[0., 0., 0., 0.],</span><br><span class="line">       [0., 0., 0., 0.]])</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>认为np.empty会返回全0数组的想法是不安全的，很多情况下（如前所示），它返回的都是一些未初始化的垃圾值。</p>
+<ul>
+<li><p>arange是Python内置函数range的数组版。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.arange(15)</span><br><span class="line"># array([[3, 3, 3, 3],</span><br><span class="line">       [3, 3, 3, 3]])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>eye可以创建一个N*N的数组（对角线为1其余为0）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">np.eye(6)</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">array([[1., 0., 0., 0., 0., 0.],</span><br><span class="line">       [0., 1., 0., 0., 0., 0.],</span><br><span class="line">       [0., 0., 1., 0., 0., 0.],</span><br><span class="line">       [0., 0., 0., 1., 0., 0.],</span><br><span class="line">       [0., 0., 0., 0., 1., 0.],</span><br><span class="line">       [0., 0., 0., 0., 0., 1.]])</span><br><span class="line">&apos;&apos;&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>full可以创建全部为指定值的数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.full((2,4),3)</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">array([[3, 3, 3, 3],</span><br><span class="line">       [3, 3, 3, 3]])</span><br><span class="line">&apos;&apos;&apos;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="ndarray的数据类型"><a href="#ndarray的数据类型" class="headerlink" title="ndarray的数据类型"></a>ndarray的数据类型</h3><p>使用dtype指定数组数据类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr1 = np.array([1,2,3],dtype=np.float64)</span><br><span class="line">arr1.dtype # dtype(&apos;float64&apos;)</span><br></pre></td></tr></table></figure>
+
+<p>Numpy的数据类型：<br><img src="/images/python/4.1.png" alt="img1"><br><img src="/images/python/4.2.png" alt="img2"><br>可以通过ndarray的<strong>astype</strong>方法明确地将一个数组从一个dtype转换成另一个dtype：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr = np.array([1,2,3,4])</span><br><span class="line">arr.dtype # dtype(&apos;int32&apos;)</span><br><span class="line"></span><br><span class="line">float_arr = arr.astype(np.float64)</span><br><span class="line">float_arr.dtype # dtype(&apos;float64&apos;)</span><br></pre></td></tr></table></figure>
+
+<p>在本例中，整数被转换成了浮点数。如果将浮点数转换成整数，则小数部分将会被截取删除：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr = np.array([1.7,20.6,0.93,4])</span><br><span class="line">arr.astype(np.int32) # array([ 1, 20,  0,  4])</span><br></pre></td></tr></table></figure>
+
+<p>如果某字符串数组表示的全是数字，也可以用astype将其转换为数值形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numeric_strings = np.array([&apos;1.24&apos;,&apos;6.99&apos;],dtype=np.string_)</span><br><span class="line">numeric_strings.astype(float) # array([1.24, 6.99])</span><br></pre></td></tr></table></figure>
+
+<p>如果转换过程因为某种原因而失败了（比如某个不能被转换为float64的字符串），就会引发一个ValueError。上面写的是float而不np.float64；NumPy很聪明，它会将Python类型映射到等价的dtype上。</p>
+<p>数组的dtype还有另一个属性，将一个数组类型转化成另一个数组的类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int_array = np.arange(10)</span><br><span class="line">xx = np.array([.33,.24,.5])</span><br><span class="line">int_array.astype(xx.dtype)</span><br></pre></td></tr></table></figure>
+
+<p>你还可以用简洁的类型代码来表示dtype：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">empty_uint32 = np.empty(8, dtype=&apos;u4&apos;)</span><br><span class="line">empty_uint32</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">array([         0, 1075314688,          0, 1075707904,          0,</span><br><span class="line">       1075838976,          0, 1072693248], dtype=uint32)</span><br><span class="line">&apos;&apos;&apos;</span><br></pre></td></tr></table></figure>
+
+<p><em>调用astype总会创建一个新的数组（一个数据的备份），即使新的dtype与旧的dtype相同。</em></p>
+<h3 id="NumPy数组的运算"><a href="#NumPy数组的运算" class="headerlink" title="NumPy数组的运算"></a>NumPy数组的运算</h3><p>大小相等的数组之间的任何算术运算都会将运算应用到元素级：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">arr = np.array([[1., 2., 3.], [4., 5., 6.]])</span><br><span class="line"></span><br><span class="line">arr * arr </span><br><span class="line"># array([[  1.,   4.,   9.],</span><br><span class="line">       [ 16.,  25.,  36.]])</span><br><span class="line">       </span><br><span class="line">arr - arr</span><br><span class="line"># array([[ 0.,  0.,  0.],</span><br><span class="line">       [ 0.,  0.,  0.]])</span><br><span class="line">       </span><br><span class="line">1 / arr</span><br><span class="line"># array([[ 1.    ,  0.5   ,  0.3333],</span><br><span class="line">       [ 0.25  ,  0.2   ,  0.1667]])</span><br><span class="line">       </span><br><span class="line">arr ** 0.5</span><br><span class="line"># array([[ 1.    ,  1.4142,  1.7321],</span><br><span class="line">       [ 2.    ,  2.2361,  2.4495]])</span><br></pre></td></tr></table></figure>
+
+<p>大小相同的数组之间的比较会生成布尔值数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr2 = np.array([[0., 4., 1.], [7., 2., 12.]])</span><br><span class="line">arr2 &gt; arr</span><br><span class="line"># array([[False,  True, False],</span><br><span class="line">       [ True, False,  True]], dtype=bool)</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本的索引和切片"><a href="#基本的索引和切片" class="headerlink" title="基本的索引和切片"></a>基本的索引和切片</h3><p>本节参考自《利用python进行数据分析》第四章，阅读链接：<a href="https://wizardforcel.gitbooks.io/pyda-2e/content/4.html" target="_blank" rel="noopener">https://wizardforcel.gitbooks.io/pyda-2e/content/4.html</a></p>
+
       
 
       
@@ -217,6 +315,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -267,7 +376,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/12/python-04Numpy基础：数组和矢量计算-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,6 +388,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/07/15/《机器学习实战》-01笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          《机器学习实战》-01参考笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/11/python-03高级特性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python-03高级特性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -301,7 +429,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key data-title="tags" data-url="http://yoursite.com/tags/index.html"></div>
+	<div class="ds-thread" data-thread-key="python-04Numpy基础：数组和矢量计算-1" data-title="python-04Numpy基础：数组和矢量计算" data-url="http://yoursite.com/2019/07/12/python-04Numpy基础：数组和矢量计算-1/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -324,8 +452,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/tags/index.html", 
-    sourceId: "",
+    url: "http://yoursite.com/2019/07/12/python-04Numpy基础：数组和矢量计算-1/", 
+    sourceId: "python-04Numpy基础：数组和矢量计算-1",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -334,7 +462,7 @@
   
 
   
-  <div id="SOHUCS" sid></div> 
+  <div id="SOHUCS" sid="python-04Numpy基础：数组和矢量计算-1"></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -370,7 +498,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
