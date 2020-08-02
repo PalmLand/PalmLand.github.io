@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Object Detection Intro</title>
+      <link href="/2020/08/02/Object-Detection-Intro/"/>
+      <url>/2020/08/02/Object-Detection-Intro/</url>
+      
+        <content type="html"><![CDATA[<ul><li>IOU</li></ul><a id="more"></a><h1 id="IOU的概念与python实例"><a href="#IOU的概念与python实例" class="headerlink" title="IOU的概念与python实例"></a>IOU的概念与python实例</h1><h2 id="IOU"><a href="#IOU" class="headerlink" title="IOU"></a>IOU</h2><p>$ IOU = \frac{S_∩}{S_∪}$</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> computer vision </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Face Alignment（人脸对齐）</title>
       <link href="/2020/05/10/Face-Alignment%EF%BC%88%E4%BA%BA%E8%84%B8%E6%A0%A1%E6%AD%A3%EF%BC%89/"/>
       <url>/2020/05/10/Face-Alignment%EF%BC%88%E4%BA%BA%E8%84%B8%E6%A0%A1%E6%AD%A3%EF%BC%89/</url>
